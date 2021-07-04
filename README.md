@@ -1,1 +1,1 @@
-# Hackerrank: Data Structures
+# Hackerrank: DSA
