@@ -19,10 +19,13 @@ import sys
 
 def arrayManipulation(n, queries):
     # Write your code here
-    n1 = [0]*n
-    for a,b,k in queries: 
-        for z in range(a-1,b): n1[z]+=k 
-    return max(n1)
+    # for a,b,k in queries: 
+    #     for z in range(a-1,b): n1[z]+=k 
+    y = [0]*(n+1)
+    s = m = 0
+    for a,b,k in queries: y[a-1],y[b]=y[a-1]+k,y[b]-k
+    for z in range(n+1): s,m = s+y[z],max(m,s)
+    return m
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
