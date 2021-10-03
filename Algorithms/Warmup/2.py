@@ -15,7 +15,8 @@ import sys
 # The function accepts 2D_INTEGER_ARRAY arr as parameter.
 #
 
-def diagonalDifference(arr): print(abs(sum([arr[x][x] for x in range(len(arr))])-sum([arr[x][n-1-x] for x in range(len(arr))])))
+def diagonalDifference(arr): 
+    return abs(sum([arr[x][x] for x in range(len(arr))])-sum([arr[x][n-1-x] for x in range(len(arr))]))
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
