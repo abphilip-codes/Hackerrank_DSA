@@ -1,1 +1,1 @@
-# Algorithms: Warmup
+# Algorithms: Warm-up Challenges

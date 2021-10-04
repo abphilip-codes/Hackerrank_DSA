@@ -1,1 +1,1 @@
-# Data Structures: Array
+# Data Structures: Arrays
