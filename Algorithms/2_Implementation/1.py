@@ -15,7 +15,8 @@ import sys
 # The function accepts INTEGER_ARRAY grades as parameter.
 #
 
-def gradingStudents(grades): return [z if(z%5<3 or z<38) else (z+(5-z%5)) for z in grades]
+def gradingStudents(grades): 
+    return [z if(z%5<3 or z<38) else (z+(5-z%5)) for z in grades]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

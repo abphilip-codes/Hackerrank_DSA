@@ -15,7 +15,9 @@ import sys
 # The function accepts STRING s as parameter.
 #
 
-def timeConversion(s): return s[:-2] if((s[-2:]=='AM' and s[:2]!='12') or (s[-2:]=='PM' and s[:2]=='12')) else str((int(s[:2])+12)%24).zfill(2)+s[2:-2]
+def timeConversion(s): 
+    if((s[-2:]=='AM' and s[:2]!='12') or (s[-2:]=='PM' and s[:2]=='12')): return s[:-2] 
+    else: return str((int(s[:2])+12)%24).zfill(2)+s[2:-2]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

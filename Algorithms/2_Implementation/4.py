@@ -17,7 +17,10 @@ import sys
 #  2. INTEGER_ARRAY b
 #
 
-def getTotalX(a, b): return sum([(all([z%y==0 for y in a])*all([y%z==0 for y in b])) for z in range(max(a),max(b)+1)])
+def getTotalX(a, b): 
+    return sum([(all([z%y==0 for y in a])*
+                 all([y%z==0 for y in b])) 
+                 for z in range(max(a),max(b)+1)])
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

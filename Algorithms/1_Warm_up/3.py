@@ -15,7 +15,8 @@ import sys
 # The function accepts INTEGER_ARRAY candles as parameter.
 #
 
-def birthdayCakeCandles(candles): return candles.count(max(candles))
+def birthdayCakeCandles(candles): 
+    return candles.count(max(candles))
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
