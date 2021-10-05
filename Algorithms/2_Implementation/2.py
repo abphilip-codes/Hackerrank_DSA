@@ -21,8 +21,8 @@ import sys
 #
 
 def countApplesAndOranges(s, t, a, b, apples, oranges): 
-    print((sum([1 for z in apples if(t>=(z+a)>=s)])),
-          (sum([1 for z in oranges if(t>=(z+b)>=s)])),sep='\n')
+    print((len([1 for z in apples if(t>=(z+a)>=s)])),
+          (len([1 for z in oranges if(t>=(z+b)>=s)])),sep='\n')
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()
