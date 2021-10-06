@@ -9,10 +9,7 @@ import re
 import sys
 
 # Complete the aVeryBigSum function below.
-def aVeryBigSum(ar):
-    r = 0
-    for z in range(len(ar)): r+=ar[z]
-    return r 
+def aVeryBigSum(ar): return sum(ar)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
