@@ -23,10 +23,8 @@ def countingValleys(steps, path):
     for z in path:
         if(z=='U'):
             alt+=1
-            if(alt==0):
-                valley+=1
-        else:
-            alt-=1
+            if(alt==0): valley+=1
+        else: alt-=1
     return valley
 
 if __name__ == '__main__':
