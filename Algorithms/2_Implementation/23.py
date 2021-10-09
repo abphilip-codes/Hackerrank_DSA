@@ -16,35 +16,18 @@ import sys
 #  2. INTEGER r
 #
 
-def matrixRotation(matrix, rotation):
-    r = len(matrix)
-    c = len(matrix[0])
-    layerCount = min(r,c)//2
-    layer = []
-    for i in range(layerCount):
-        circle = []
-        circle += matrix[i][i:c-i]
-        circle += [matrix[k][-1-i] for k in range(i+1,r-1-i)]
-        circle += matrix[-1-i][i:c-i][::-1]
-        circle += [matrix[k][i] for k in range(r-2-i,i,-1)]
-        ro = rotation % len(circle)
-        circle = circle[ro:]+circle[:ro]
-        cnt = 0
-        # print(circle)
-        for idx in range(i,c-i):
-            matrix[i][idx] = circle[cnt]
-            cnt+=1
-        for idx in range(i+1,r-1-i):
-            matrix[idx][-1-i] = circle[cnt]
-            cnt+=1
-        for idx in range(c-i-1, i-1,-1):
-            matrix[-1-i][idx] = circle[cnt]
-            cnt+=1
-        for idx in range(r-2-i,i,-1):
-            matrix[idx][i]=circle[cnt]
-            cnt+=1
-    for m in matrix:
-        print(' '.join(list(map(str,m))))
+def matrixRotation(m, t):
+    r = len(m)
+    c = len(m[0])
+    for z in range(min(r,c)//2):
+        ans = (m[z][z:c-z] + [m[k][-1-z] for k in range(z+1,r-1-z)] + 
+               m[-1-z][z:c-z][::-1] + [m[k][z] for k in range(r-2-z,z,-1)])
+        ans = ans[t%len(ans):]+ans[:t%len(ans)]
+        for y in range(z,c-z): m[z][y] = ans.pop(0)
+        for y in range(z+1,r-z-1): m[y][-1-z] = ans.pop(0)
+        for y in range(c-z-1,z-1,-1): m[-1-z][y] = ans.pop(0)
+        for y in range(r-z-2,z,-1): m[y][z] = ans.pop(0)
+    for k in m: print(*k)
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()
