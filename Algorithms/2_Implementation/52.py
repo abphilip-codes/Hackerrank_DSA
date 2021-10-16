@@ -1,4 +1,4 @@
-# 
+# https://www.hackerrank.com/challenges/the-time-in-words/problem
 
 #!/bin/python3
 
