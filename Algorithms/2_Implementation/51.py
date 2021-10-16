@@ -19,9 +19,9 @@ import sys
 #  4. INTEGER s
 #
 
-def howManyGames(p, d, m, s):
-    if(p<=m): p = m
-    return 0 if(p>s) else howManyGames(p-d, d, m, s-p)+1
+def howManyGames(p, d, m, s, ans=-1):
+    while(s>=0): s,p,ans=s-p,max(p-d,m),ans+1
+    return ans
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
