@@ -18,20 +18,18 @@ import sys
 #
 
 def bomberMan(n, grid):
-    row, col = len(grid), len(grid[0])
-    if n < 2 : return grid 
-    if n % 2 == 0: return ['O' * col for _ in range(row)] 
+    if(n<2): return grid 
+    if(n%2==0): return ['O'*len(grid[0]) for _ in range(len(grid))] 
 
-    for w in range(2):
-        g = [list(i) for i in grid]
-        for i in range(row):
-            for j in range(col):
-                if g[i][j] == 'O':
-                    for x,y in (i,j+1), (i,j-1),(i+1, j), (i-1,j):
-                        if 0 <= x < row and 0 <= y < col and g[x][y] == '.':
-                           g[x][y] = 'X' 
-                    g[i][j] = 'X'
-        grid = [''.join('.' if j == 'X' else 'O' for j in i) for i in g]
+    for _ in range(2):
+        g = [list(z) for z in grid]
+        for z in range(len(grid)):
+            for y in range(len(grid[0])):
+                if(g[z][y]=='O'):
+                    for a,b in (z,y+1),(z,y-1),(z+1,y),(z-1,y):
+                        if(0<=a<len(grid) and 0<=b<len(grid[0]) and g[a][b]=='.'): g[x][w] = 'X' 
+                    g[z][y] = 'X'
+        grid = [''.join('.' if(y=='X') else 'O' for y in z) for z in g]
         if(n%4==3): return grid
     return grid
 
