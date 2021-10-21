@@ -22,7 +22,7 @@ def bomberMan(n, grid):
     if n < 2 : return grid 
     if n % 2 == 0: return ['O' * col for _ in range(row)] 
 
-    def boom():
+    for w in range(2):
         g = [list(i) for i in grid]
         for i in range(row):
             for j in range(col):
@@ -31,9 +31,9 @@ def bomberMan(n, grid):
                         if 0 <= x < row and 0 <= y < col and g[x][y] == '.':
                            g[x][y] = 'X' 
                     g[i][j] = 'X'
-        return [''.join('.' if j == 'X' else 'O' for j in i) for i in g]
-    grid = boom() 
-    return grid if n % 4 == 3 else boom()
+        grid = [''.join('.' if j == 'X' else 'O' for j in i) for i in g]
+        if(n%4==3): return grid
+    return grid
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
