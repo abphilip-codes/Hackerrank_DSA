@@ -17,10 +17,11 @@ import sys
 #  2. INTEGER_ARRAY queries
 #
 
-def weightedUniformStrings(s, queries, ans=[]):
+def weightedUniformStrings(s, queries, ans=set()):
     for z in range(len(s)):
-        if(z!=0 and s[z-1]==s[z]): ans.append(ans[z-1] + ord(s[z]) - 96)
-        else: ans.append(ord(s[z]) - 96)
+        if(z==0 or s[z]!=s[z-1]): a=(ord(s[z])-96)           
+        else: a+=(ord(s[z])-96)            
+        ans.add(a)
     return ["Yes" if(z in ans) else "No" for z in queries]
 
 if __name__ == '__main__':
