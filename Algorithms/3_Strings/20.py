@@ -16,20 +16,19 @@ import sys
 #
 
 def palindromeIndex(s):
-    for p in range(len(s)//2+1):
-        q = len(s) - p - 1
-        if s[p] != s[~p]:
-            if s[p+1:q+1] == s[q:p:-1]: return p
-            elif s[p:q] == s[p:q][::-1]: return q
-            else: return -1
+    for z in range(len(s)//2+1):
+        if(s[z]!=s[~z]):
+            if(s[z+1:len(s)-z]==s[len(s)-z-1:z:-1]): return z
+            elif(s[z:len(s)-z-1]==s[z:len(s)-z-1][::-1]): return len(s)-z-1
+            return -1
     return -1
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    q = int(input().strip())
+    y = int(input().strip())
 
-    for q_itr in range(q):
+    for q_itr in range(y):
         s = input()
 
         result = palindromeIndex(s)
