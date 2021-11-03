@@ -18,7 +18,7 @@ import sys
 #
 
 def pairs(k, arr):
-    d,ans = {z : 1 for i,z in enumerate(arr)},0
+    d,ans = {z:1 for _,z in enumerate(arr)},0
     for z in d:
         if((z+k) in d): ans+=1
     return ans
