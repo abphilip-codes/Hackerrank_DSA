@@ -16,8 +16,8 @@ import sys
 #
 
 def balancedSums(n, arr):
-    a,b = 0,int(sum(arr[1:]))
-    for z in range(n):
+    a,b = 0,int(sum(arr[2:]))
+    for z in range(1,n+1):
         if(a==b): return 'YES'
         a,b = a+arr[z],b-arr[z+1]
     else: return 'NO'
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
         arr = list(map(int, input().rstrip().split()))
 
-        result = balancedSums(n, arr)
+        result = balancedSums(n, [0]+arr+[0])
 
         fptr.write(result + '\n')
 
