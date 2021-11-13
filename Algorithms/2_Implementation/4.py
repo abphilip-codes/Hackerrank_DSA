@@ -40,4 +40,3 @@ if __name__ == '__main__':
     fptr.write(str(total) + '\n')
 
     fptr.close()
-    
