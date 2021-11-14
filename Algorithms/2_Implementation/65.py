@@ -27,7 +27,7 @@ def bomberMan(n, grid):
             for y in range(len(grid[0])):
                 if(g[z][y]=='O'):
                     for a,b in (z,y+1),(z,y-1),(z+1,y),(z-1,y):
-                        if(0<=a<len(grid) and 0<=b<len(grid[0]) and g[a][b]=='.'): g[x][w] = 'X' 
+                        if(0<=a<len(grid) and 0<=b<len(grid[0]) and g[a][b]=='.'): g[a][b] = 'X' 
                     g[z][y] = 'X'
         grid = [''.join('.' if(y=='X') else 'O' for y in z) for z in g]
         if(n%4==3): return grid
