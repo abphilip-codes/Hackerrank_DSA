@@ -15,16 +15,6 @@ import sys
 # The function accepts INTEGER_ARRAY arr as parameter.
 #
 
-def hw(k, arr):
-    d = {}
-    for z,a in enumerate(arr):
-        b = k[a]
-        while True:
-            try: b = d[b]
-            except KeyError: break
-        if(b!=z): d[z]=b
-    return len(d)
-
 def lilysHomework(arr, ans=[]):
     d1 = {y:z for z,y in enumerate(arr)}
     for x in [sorted(arr), sorted(arr, reverse=True)]:
