@@ -18,10 +18,7 @@ import sys
 #
 
 def matchingStrings(strings, queries):
-    # Write your code here
-    ans=[]
-    for i in queries: ans.append(strings.count(i))
-    return ans
+    return [strings.count(z) for z in queries]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
