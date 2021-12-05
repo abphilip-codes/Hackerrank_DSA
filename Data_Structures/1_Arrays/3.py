@@ -18,7 +18,6 @@ import sys
 #
 
 def rotateLeft(d, arr):
-    # Write your code here
     arr=arr+arr[:d]
     del arr[:d]
     return arr
