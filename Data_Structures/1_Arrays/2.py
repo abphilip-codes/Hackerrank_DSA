@@ -18,7 +18,6 @@ import sys
 #
 
 def dynamicArray(n, queries):
-    # Write your code here
     s,last,ans = [[] for i in range(n)],0,[]
 
     for q in queries:
@@ -29,7 +28,6 @@ def dynamicArray(n, queries):
             ans.append(last)
         else: s[i].append(q[2])
     return ans
-    
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
