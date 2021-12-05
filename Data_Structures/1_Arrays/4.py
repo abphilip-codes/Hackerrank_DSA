@@ -16,11 +16,10 @@ import itertools
 # The function accepts 2D_INTEGER_ARRAY arr as parameter.
 #
 
-def hourglassSum(arr):
-    summ = []
+def hourglassSum(arr, s=[]):
     for j,i in itertools.product(range(0,4),range(0,4)):
-        summ.append(sum(arr[i][j:j+3])+arr[i+1][j+1]+sum(arr[i+2][j:j+3]))
-    return max(summ)
+        s.append(sum(arr[i][j:j+3])+arr[i+1][j+1]+sum(arr[i+2][j:j+3]))
+    return max(s)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
