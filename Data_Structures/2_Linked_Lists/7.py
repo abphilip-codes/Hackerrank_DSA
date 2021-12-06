@@ -55,22 +55,15 @@ def print_singly_linked_list(node, sep, fptr):
 #
 
 def reverse(head):
-    # prev = None
-    # while head:
-    #     prev = Node(head.data, prev)
-    #     head = head.next
-    # return prev
-    if head==None:
-        return None
+    if not head: return head
     prev = None
     curr = head
-    aux = head.next
-    while curr is not None:
+    n = head.next
+    while curr:
         curr.next = prev
         prev = curr
-        curr = aux
-        if curr is not None:
-            aux = aux.next
+        curr = n
+        if curr: n = n.next
     return prev
 
 if __name__ == '__main__':
