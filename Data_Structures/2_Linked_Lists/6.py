@@ -54,7 +54,7 @@ def print_singly_linked_list(node, sep):
 #
 
 def reversePrint(head):
-    if(head==None): return head
+    if not head: return head
     reversePrint(head.next)
     print(head.data)
 
