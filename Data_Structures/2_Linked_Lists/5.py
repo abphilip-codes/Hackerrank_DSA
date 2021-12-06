@@ -37,14 +37,6 @@ def deleteNode(head, position):
     if not position: return head.next
     head.next = deleteNode(head.next, position-1)
     return head
-    # temp=head
-    # if(head==None): return head
-    # if(position==0): return head.next
-    # for i in range(position-1): 
-    #     if(temp.next==None): return head
-    #     temp=temp.next
-    # temp.next=temp.next.next
-    # return head
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
