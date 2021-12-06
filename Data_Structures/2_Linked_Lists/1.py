@@ -29,7 +29,7 @@ class SinglyLinkedList:
 def printLinkedList(head):
     while head:
         print(head.data)
-        head=head.next
+        head = head.next
 
 if __name__ == '__main__':
     llist_count = int(input())

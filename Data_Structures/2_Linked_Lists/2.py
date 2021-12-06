@@ -26,9 +26,9 @@ def print_singly_linked_list(node, sep, fptr):
             fptr.write(sep)
 
 def insertNodeAtHead(head, data):
-    n=SinglyLinkedListNode(data)
-    n.next=head
-    head=n      
+    node = SinglyLinkedListNode(data)
+    node.next = head
+    head = node      
     return head  
 
 if __name__ == '__main__':
