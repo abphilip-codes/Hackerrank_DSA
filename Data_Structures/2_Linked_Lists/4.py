@@ -30,8 +30,7 @@ def insertNodeAtTail(head, data):
     if(head==None): 
         head = n
         return head
-    while(prev.next!=None):
-        prev = prev.next
+    while prev.next: prev = prev.next
     prev.next = n
     return head
 
