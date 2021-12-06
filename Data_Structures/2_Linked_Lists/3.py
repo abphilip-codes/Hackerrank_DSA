@@ -34,14 +34,14 @@ def print_singly_linked_list(node, sep, fptr):
             fptr.write(sep)
 
 def insertNodeAtPosition(head, data, position):
-    prev=head
+    prev = head
     if(prev==None): return head
-    n=SinglyLinkedListNode(data)
-    for i in range(0,position-1):
+    n = SinglyLinkedListNode(data)
+    for _ in range(0,position-1):
         if(prev.next==None): return head
-        prev=prev.next
-    n.next=prev.next
-    prev.next=n
+        prev = prev.next
+    n.next = prev.next
+    prev.next = n
     return head
 
 if __name__ == '__main__':
