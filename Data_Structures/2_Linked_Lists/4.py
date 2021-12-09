@@ -26,12 +26,12 @@ def print_singly_linked_list(node, sep, fptr):
 
 def insertNodeAtTail(head, data):
     prev = head
-    n = SinglyLinkedListNode(data)
-    if(head==None): 
-        head = n
+    node = SinglyLinkedListNode(data)
+    if not head: 
+        head = node
         return head
     while prev.next: prev = prev.next
-    prev.next = n
+    prev.next = node
     return head
 
 if __name__ == '__main__':
